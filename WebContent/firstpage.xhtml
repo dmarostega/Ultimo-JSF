@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+<title>Ultimo - Cadastro</title>
+</h:head>
+<h:body>
+<h3>Cadastro e Listagem de usuários...</h3>
+<h:form id="pessoaForm">
+	<h:outputText value="Nome" />
+	<h:inputText id="campoNome" value="#{pessoaBean.nome}" />
+	<h:inputText id="senha" value="#{pessoaBean.senha}" /><br/>
+	<h:inputTextarea id="texto" value="#{pessoaBean.texto}" cols="30" rows="6">
+	</h:inputTextarea>
+	
+		<h:commandButton value="Cadastrar" action="#{pessoaBean.addNome}"/>
+	
+	<h:dataTable value="#{pessoaBean.nomes}" var="nome">
+		<h:column>
+			<h:outputText value="#{nome}" />
+		</h:column>
+	</h:dataTable>
+</h:form>
+	
+	
+</h:body>
+</html>
