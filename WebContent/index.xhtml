@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
+	<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
 <title>Meu</title>
@@ -9,13 +9,22 @@
 	
 	<h:form id="formNavegacao">
 	<h3>Bem Vindo ao Ultimo JSF</h3>
-	<h:commandButton value="Ir Par First Page" action="firstpage"></h:commandButton>
+	<h:commandButton value="Ir Para First Page" action="firstpage"></h:commandButton>
 	
 	<br/>
 	<br/>
 	<h:outputLabel value="Nome" for="outNome"/>
-	<h:outputText id="outNome" value="#{pessoaBean.nome}"/><!-- Usado para gravar -->
+	<h:outputText id="outNome" value="#{pessoaBean.pessoa.nome}"/><!-- Usado para gravar -->
+	
+	<div style="width: 100px; margin: auto" >
+		<h:commandButton value="Cadastrar" action="cadastraPessoa" />
+	</div>
+	
+	
 	</h:form>
+	
+	
+
 	
 	
 </h:body>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Insert title here</title>
+</h:head>
+<h:body>
+	<h3>Cadastrando pessoa</h3>
+	<div style="width: 400px; margin: auto; border: 2px solid black;">
+		<h:form>
+			<h:panelGrid columns = "2">
+			<h:outputLabel value="Nome" for="nomePessoa" />
+			<h:inputText id="nomePessoa" value="#{pessoaBean.pessoa.nome}" />
+		
+			<h:outputLabel value="Sobrenome" for="sobrenomePessoa" />
+			<h:inputText id="sobrenomePessoa" value="#{pessoaBean.pessoa.sobrenome}" />
+	
+			<h:outputLabel value="Idade" for="idadePessoa" />
+			<h:inputText id="idadePessoa" value="#{pessoaBean.pessoa.idade}" />
+	
+		<!-- 	<h:outputLabel value="Data Nascimento" for="nascimentoPessoa" />
+			<h:inputText id="nascimentoPessoa" value="#{pessoaBean.pessoa.dataNascimento}" /> -->
+		</h:panelGrid>
+		<div>
+		<h:commandButton value="Salvar" action="#{pessoaBean.save}" />
+		</div>
+		
+		
+		
+		
+		<!-- <div>
+			<h:outputLabel value="Nome" for="nomePessoa" />
+			<h:inputText id="nomePessoa" value="#{pessoaBean.pessoa.nome}" />
+		</div>
+		<div>
+			<h:outputLabel value="Sobrenome" for="sobrenomePessoa" />
+			<h:inputText id="sobrenomePessoa" value="#{pessoaBean.pessoa.sobrenome}" />
+		</div>
+		<div>
+			<h:outputLabel value="Idade" for="idadePessoa" />
+			<h:inputText id="idadePessoa" value="#{pessoaBean.pessoa.idade}" />
+		</div>
+		<div>
+			<h:outputLabel value="Data Nascimento" for="nascimentoPessoa" />
+			<h:inputText id="nascimentoPessoa" value="#{pessoaBean.pessoa.dataNascimento}" />
+		</div> -->
+		
+		
+		
+		
+		</h:form>
+	</div>
+
+
+
+</h:body>
+</html>
