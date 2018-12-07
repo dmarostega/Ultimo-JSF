@@ -23,6 +23,27 @@ public class PessoaBean {
 		return "index";
 	}
 
+	public String merge() {
+		pessoa = daoPessoa.merge(pessoa);
+		
+		return "";
+	}
+
+	public String novo() {
+		pessoa = new Pessoa();		
+		return "";
+	}
+	
+	public String remove() {
+		daoPessoa.delete(pessoa);
+		return "";
+	}	
+	
+	public String removeWithId() {
+		daoPessoa.delete(pessoa);
+		return "";
+	}
+	
 	public Pessoa getPessoa() {
 		return pessoa;
 	}

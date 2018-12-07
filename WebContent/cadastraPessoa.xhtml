@@ -10,6 +10,11 @@
 	<div style="width: 400px; margin: auto; border: 2px solid black;">
 		<h:form>
 			<h:panelGrid columns = "2">
+			
+			<h:outputLabel value="Cod." for="idPessoa" />
+			<h:outputText readonly="true" id="idPessoa" value="#{pessoaBean.pessoa.id}" />
+		
+			
 			<h:outputLabel value="Nome" for="nomePessoa" />
 			<h:inputText id="nomePessoa" value="#{pessoaBean.pessoa.nome}" />
 		
@@ -23,7 +28,9 @@
 			<h:inputText id="nascimentoPessoa" value="#{pessoaBean.pessoa.dataNascimento}" /> -->
 		</h:panelGrid>
 		<div>
-		<h:commandButton value="Salvar" action="#{pessoaBean.save}" />
+			<h:commandButton value="Novo" action="#{pessoaBean.novo}" />
+			<h:commandButton value="Salvar" action="#{pessoaBean.merge}" />
+			<h:commandButton value="Remover" action="#{pessoaBean.removeWithId}" />
 		</div>
 		
 		
