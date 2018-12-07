@@ -40,8 +40,8 @@ public class PessoaBean {
 	}	
 	
 	public String removeWithId() {
-		daoPessoa.delete(pessoa);
-		return "";
+		daoPessoa.deleteWithId(pessoa);
+		return "index";
 	}
 	
 	public Pessoa getPessoa() {
