@@ -3,6 +3,7 @@ package br.com.Ultimo;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
@@ -16,6 +17,7 @@ import br.com.entidades.Pessoa;
 public class PessoaBean {
 	private Pessoa pessoa = new Pessoa();
 	private DaoGeneric<Pessoa> daoPessoa = new DaoGeneric<Pessoa>();
+	private List<Pessoa> pessoas = new ArrayList<Pessoa>();
 	
 	public String save() {
 		daoPessoa.save(pessoa);
@@ -25,8 +27,16 @@ public class PessoaBean {
 
 	public String merge() {
 		pessoa = daoPessoa.merge(pessoa);
-		
+		carregarPessoas();
 		return "";
+	}
+
+	public List<Pessoa> getPessoas() {
+		return pessoas;
+	}
+
+	public void setPessoas(List<Pessoa> pessoas) {
+		this.pessoas = pessoas;
 	}
 
 	public String novo() {
@@ -36,12 +46,19 @@ public class PessoaBean {
 	
 	public String remove() {
 		daoPessoa.delete(pessoa);
+		carregarPessoas();
 		return "";
 	}	
 	
 	public String removeWithId() {
 		daoPessoa.deleteWithId(pessoa);
+		carregarPessoas();
 		return "index";
+	}
+	
+	@PostConstruct
+	public void carregarPessoas() {
+		pessoas = daoPessoa.getListEntity(Pessoa.class);
 	}
 	
 	public Pessoa getPessoa() {

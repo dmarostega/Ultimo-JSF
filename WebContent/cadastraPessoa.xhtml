@@ -7,7 +7,9 @@
 </h:head>
 <h:body>
 	<h3>Cadastrando pessoa</h3>
-	<div style="width: 400px; margin: auto; border: 2px solid black;">
+	<div style="width: 400px; margin: auto; 
+				border: 2px solid black;
+				padding: 10px;">
 		<h:form>
 			<h:panelGrid columns = "2">
 			
@@ -32,7 +34,7 @@
 			<h:commandButton value="Salvar" action="#{pessoaBean.merge}" />
 			<h:commandButton value="Remover" action="#{pessoaBean.removeWithId}" />
 		</div>
-		
+
 		
 		
 		
@@ -57,6 +59,25 @@
 		
 		
 		</h:form>
+	</div>
+	
+	<div style="width: 500px; padding: 15px; margin:auto;">
+		<h4 style="text-align: center">Listagem</h4>	
+			
+		<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa">
+			<h:column>
+				<h:outputText value="#{pessoa.id}"/>
+			</h:column>
+						<h:column>
+				<h:outputText value="#{pessoa.nome}"/>
+			</h:column>
+			<h:column>
+				<h:outputText value="#{pessoa.sobrenome}"/>
+			</h:column>
+			<h:column>
+				<h:outputText value="#{pessoa.idade}"/>
+			</h:column>
+		</h:dataTable>
 	</div>
 
 
